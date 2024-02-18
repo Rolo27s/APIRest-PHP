@@ -1,6 +1,7 @@
 <?php
 
 $url = 'https://www.zaragoza.es/sede/servicio/urbanismo-infraestructuras/estacion-bicicleta?rf=html&srsname=wgs84&start=0&rows=50&distance=500';
+// https://www.zaragoza.es/docs-api_sede/#/Equipamientos%20y%20movilidad%3A%20Estaciones%20Bizi/get_servicio_urbanismo_infraestructuras_estacion_bicicleta
 
 $ch = curl_init($url);
 
