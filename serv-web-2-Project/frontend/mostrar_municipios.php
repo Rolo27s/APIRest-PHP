@@ -11,7 +11,7 @@
 <body>
     <?php
     require_once("../api/REST_bd_datos.php");
-    
+
     // Obtener la URL para la solicitud al servicio web
     $url = URL_S_WEB;
     if (isset($_GET["provincia"]) && $_GET["provincia"] != "") {
@@ -27,7 +27,7 @@
         echo "<p>No se pudo obtener la lista de municipios.</p>";
     } else {
         // Mostrar el formulario de filtrado por provincia
-    ?>  
+    ?>
         <h1>Lista de municipios</h1>
         <div>
             <span>
@@ -53,8 +53,8 @@
             echo "<table><tr><th>Nombre</th><th>Provincia</th><th>Población</th><th>Acciones</th></tr>\n";
             foreach ($municipios as $municipio) {
                 echo "<tr><td>{$municipio['nombre']}</td><td>{$municipio['provincia']}</td><td>{$municipio['poblacion']}</td><td>\n";
-                echo "<a href='editar_municipio.php?id={$municipio['id']}'>Editar</a>\n";
-                echo "<a href='borrar_municipio.php?id={$municipio['id']}'>Borrar</a>\n";
+                echo "<button onclick=\"window.location.href='editar_municipio.php?id={$municipio['id']}'\">Editar</button>\n";
+                echo "<button onclick=\"confirmarBorrado({$municipio['id']})\">Borrar</button>\n";
                 echo "</td></tr>\n";
             }
             echo "</table>\n\n";
@@ -62,6 +62,14 @@
             <span><a href="agregar_municipio.php">Añadir nuevo Municipio</a></span><br />
         </div>
     <?php } ?>
+    <script>
+        function confirmarBorrado(id) {
+            if (confirm("¿Está seguro de borrar este registro?")) {
+                // Si el usuario confirma, redirige a la página de borrado con el ID del municipio
+                window.location.href = "borrar_municipio.php?id=" + id;
+            }
+        }
+    </script>
 </body>
 
 </html>
