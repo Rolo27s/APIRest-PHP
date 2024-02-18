@@ -6,4 +6,4 @@ define("BDD_USER", "root");
 define("BDD_PASS", "");
 
 
-define("URL_S_WEB", "http://localhost/APIRest/serv-web-2-Project/api/REST_bd_Andalucia.php");
+define("URL_S_WEB", "http://localhost/APIRest-PHP/serv-web-2-Project/api/REST_bd_Andalucia.php");

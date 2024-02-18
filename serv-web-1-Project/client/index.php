@@ -19,7 +19,7 @@
             "base" => $_POST["base"],
             "exponente" => $_POST["exponente"],
         );
-        $response = enviarSolicitud("http://localhost/APIRest/serv-web-1-project/api/REST_Mates.php", $postData);
+        $response = enviarSolicitud("http://localhost/APIRest-PHP/serv-web-1-project/api/REST_Mates.php", $postData);
 
         if ($response !== false) {
             $data = json_decode($response, true);
